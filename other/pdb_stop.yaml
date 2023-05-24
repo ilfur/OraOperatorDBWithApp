@@ -1,0 +1,37 @@
+apiVersion: database.oracle.com/v1alpha1
+kind: PDB
+metadata:
+  name: testpdb
+  namespace: oracle-database-operator-system
+  labels:
+    cdb: cdb19c
+spec:
+  cdbResName: "cdb19c"
+  cdbName: "DB19C"
+  pdbName: "testpdb"
+  adminName:
+    secret:
+      secretName: "testpdb-secret"
+      key: "sysadmin_user"
+  adminPwd:
+    secret:
+      secretName: "testpdb-secret"
+      key: "sysadmin_pwd"
+  fileNameConversions: "NONE"
+  totalSize: "1G"
+  tempSize: "100M"
+  action: "Modify"
+  pdbState: "CLOSE"
+  modifyOption: "IMMEDIATE"
+  pdbTlsCat:
+    secret:
+      secretName: "db-ca"
+      key: "ca.crt"
+  pdbTlsCrt:
+    secret:
+      secretName: "db-tls"
+      key: "tls.crt"
+  pdbTlsKey:
+    secret:
+      secretName: "db-tls"
+      key: "tls.key"
