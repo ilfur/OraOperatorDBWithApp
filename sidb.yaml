@@ -12,8 +12,8 @@ spec:
   charset: AL32UTF8
   edition: enterprise
   image:
-    #pullFrom: container-registry.oracle.com/database/enterprise:latest
-    pullFrom: container-registry.oracle.com/database/enterprise_ru:19.20.0.0
+    pullFrom: container-registry.oracle.com/database/enterprise:latest
+    #pullFrom: container-registry.oracle.com/database/enterprise_ru:19.20.0.0
     pullSecrets: oracle-container-registry-secret
   loadBalancer: true
   pdbName: chronin
