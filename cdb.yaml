@@ -2,6 +2,7 @@ apiVersion: database.oracle.com/v1alpha1
 kind: CDB
 metadata:
   name: cdbchronin
+  namespace: chronin-database
 spec:
   cdbAdminPwd:
     secret:
