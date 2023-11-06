@@ -1,0 +1,31 @@
+apiVersion: database.oracle.com/v1alpha1
+kind: PDB
+metadata:
+  name: chronin
+  namespace: chronin-database
+    cdb: cdbchronin
+spec:
+  cdbResName: "cdbchronin"
+  cdbName: "ORCL1"
+  pdbName: "chronin"
+  adminName: "sys"
+  adminPwd:
+    secret:
+      secretName: "db-admin-secret"
+      key: "oracle_pwd"
+  fileNameConversions: "NONE"
+  totalSize: "1G"
+  tempSize: "100M"
+  action: "Map"
+  pdbTlsCat:
+    secret:
+      secretName: "db-ca"
+      key: "ca.crt"
+  pdbTlsCrt:
+    secret:
+      secretName: "db-tls"
+      key: "tls.crt"
+  pdbTlsKey:
+    secret:
+      secretName: "db-tls"
+      key: "tls.key"
