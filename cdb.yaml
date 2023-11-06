@@ -13,6 +13,14 @@ spec:
       key: cdbadmin_user
       secretName: cdbchronin-secret
   cdbName: cdbchronin
+  cdbTlsCrt:
+    secret:
+      key: tls.crt
+      secretName: db-tls
+  cdbTlsKey:
+    secret:
+      key: tls.key
+      secretName: db-tls
   dbPort: 1521
   dbServer: 158.101.217.247
   ordsImage: ilfur/ordsrestmgmt:23.1
