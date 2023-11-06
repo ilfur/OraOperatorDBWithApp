@@ -12,7 +12,7 @@ spec:
   adminName: "system"
   adminPwd:
     secret:
-      secretName: "chronin-admin-secret"
+      secretName: "db-admin-secret"
       key: "oracle_pwd"
   fileNameConversions: "NONE"
   totalSize: "1G"
