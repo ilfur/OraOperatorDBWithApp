@@ -10,7 +10,7 @@ spec:
   cdbName: "ORCL1"
   pdbName: "chronin"
   adminName: 
-      secret:
+    secret:
       secretName: "db-admin-secret"
       key: "oracle_user"
   adminPwd:
