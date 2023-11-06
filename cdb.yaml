@@ -1,0 +1,37 @@
+apiVersion: database.oracle.com/v1alpha1
+kind: CDB
+metadata:
+  name: cdbchronin
+spec:
+  cdbAdminPwd:
+    secret:
+      key: cdbadmin_pwd
+      secretName: cdbchronin-secret
+  cdbAdminUser:
+    secret:
+      key: cdbadmin_user
+      secretName: cdbchronin-secret
+  cdbName: cdbchronin
+  dbPort: 1521
+  dbServer: 158.101.217.247
+  ordsImage: ilfur/ordsrestmgmt:23.1
+  ordsImagePullPolicy: Always
+  ordsPort: 8888
+  ordsPwd:
+    secret:
+      key: ords_pwd
+      secretName: cdbchronin-secret
+  replicas: 1
+  serviceName: ORCL1
+  sysAdminPwd:
+    secret:
+      key: sysadmin_pwd
+      secretName: cdbchronin-secret
+  webServerPwd:
+    secret:
+      key: webserver_pwd
+      secretName: cdbchronin-secret
+  webServerUser:
+    secret:
+      key: webserver_user
+      secretName: cdbchronin-secret
