@@ -2,11 +2,11 @@ apiVersion: database.oracle.com/v1alpha1
 kind: PDB
 metadata:
   name: chronin
-  namespace: chronin-database
+  namespace: oracle-database-operator-system
   labels:
     cdb: cdbchronin
 spec:
-  cdbResName: "cdbchronin.oracle-database-operator-system"
+  cdbResName: "cdbchronin"
   cdbName: "ORCL1"
   pdbName: "chronin"
   adminName: 
@@ -23,13 +23,13 @@ spec:
   action: "Map"
   pdbTlsCat:
     secret:
-      secretName: "db-ca"
+      secretName: "dbchronin-ca"
       key: "ca.crt"
   pdbTlsCrt:
     secret:
-      secretName: "db-tls"
+      secretName: "dbchronin-tls"
       key: "tls.crt"
   pdbTlsKey:
     secret:
-      secretName: "db-tls"
+      secretName: "dbchronin-tls"
       key: "tls.key"
