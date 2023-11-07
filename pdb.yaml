@@ -4,9 +4,9 @@ metadata:
   name: chronin
   namespace: chronin-database
   labels:
-    cdb: cdbchronin
+    cdb: cdbchronin.chronin-database
 spec:
-  cdbResName: "cdbchronin.chronin-database"
+  cdbResName: "cdbchronin"
   cdbName: "ORCL1"
   pdbName: "chronin"
   adminName: 
