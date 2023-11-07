@@ -4,7 +4,7 @@ metadata:
   name: chronin
   namespace: chronin-database
   labels:
-    cdb: cdbchronin.chronin-database
+    cdb: cdbchronin
 spec:
   cdbResName: "cdbchronin"
   cdbName: "ORCL1"
