@@ -1,0 +1,46 @@
+apiVersion: database.oracle.com/v1alpha1
+kind: CDB
+metadata:
+  name: cdb19c
+  namespace: oracle-database-operator-system
+spec:
+  cdbAdminPwd:
+    secret:
+      key: cdbadmin_pwd
+      secretName: cdb19c-secret
+  cdbAdminUser:
+    secret:
+      key: cdbadmin_user
+      secretName: cdb19c-secret
+  cdbName: DB19c
+  cdbTlsCrt:
+    secret:
+      key: tls.crt
+      secretName: db-tls
+  cdbTlsKey:
+    secret:
+      key: tls.key
+      secretName: db-tls
+  dbPort: 1521
+  dbServer: 130.61.106.59
+  ordsImage: fra.ocir.io/frul1g8cgfam/pub_ordsrestmgmt:23.1
+  ordsImagePullPolicy: Always
+  ordsPort: 8888
+  ordsPwd:
+    secret:
+      key: ords_pwd
+      secretName: cdb19c-secret
+  replicas: 1
+  serviceName: DB19c_fra1gq.publicdevnet.k8snet.oraclevcn.com
+  sysAdminPwd:
+    secret:
+      key: sysadmin_pwd
+      secretName: cdb19c-secret
+  webServerPwd:
+    secret:
+      key: webserver_pwd
+      secretName: cdb19c-secret
+  webServerUser:
+    secret:
+      key: webserver_user
+      secretName: cdb19c-secret
