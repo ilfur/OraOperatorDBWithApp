@@ -6,7 +6,7 @@ metadata:
   labels:
     cdb: cdbchronin
 spec:
-  cdbResName: "cdbchronin"
+  cdbResName: "cdbchronin.oracle-database-operator-system"
   cdbName: "ORCL1"
   pdbName: "chronin"
   adminName: 
