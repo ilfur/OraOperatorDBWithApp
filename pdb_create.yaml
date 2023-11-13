@@ -20,8 +20,9 @@ spec:
   fileNameConversions: "NONE"
   totalSize: "1G"
   tempSize: "100M"
-  action: "Create"
-  #dropAction: "INCLUDING"
+  #action: "Create"
+  action: "Delete"
+  dropAction: "INCLUDING"
   pdbTlsCat:
     secret:
       secretName: "db-ca"
