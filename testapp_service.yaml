@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: cmpdemoapp
-  name: cmpdemoapp-deployment
+    app: cdbtest-app
+  name: cdbtest-deployment
   namespace: oracle-database-operator-system
 spec:
   ports:
@@ -12,7 +12,6 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    app: cmpdemoapp
+    app: cdbtest-app
   sessionAffinity: None
   type: LoadBalancer
-
