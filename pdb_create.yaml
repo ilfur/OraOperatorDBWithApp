@@ -20,7 +20,7 @@ spec:
   fileNameConversions: "NONE"
   totalSize: "1G"
   tempSize: "100M"
-  action: "Create"
+  action: "Map"
   pdbTlsCat:
     secret:
       secretName: "db-ca"
