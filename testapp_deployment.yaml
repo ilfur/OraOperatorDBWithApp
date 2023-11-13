@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: cdbtest-app
+  name: cdbtest-deployment
+  namespace: oracle-database-operator-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cdbtest-app
+  template:
+    metadata:
+      labels:
+        app: cdbtest-app
+    spec:
+      containers:
+      - env:
+        - name: DBUSR
+          value: system
+        - name: DBPWD
+          valueFrom:
+            secretKeyRef:
+              key: sysadmin_pwd
+              name: cdb19c-secret
+        - name: DBURL
+          value: "(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=130.61.106.59)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=testpdb.publicdevnet.k8snet.oraclevcn.com)(INSTANCE_NAME=DB19c)(UR=A)(SERVER=DEDICATED)))"
+        image: docker.io/ilfur/helidon-dbstat
+        imagePullPolicy: Always
+        name: cmpdemoapp-container
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+      imagePullSecrets:
+      - name: dockerio
+      restartPolicy: Always
