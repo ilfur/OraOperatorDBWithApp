@@ -21,7 +21,8 @@ spec:
   totalSize: "1G"
   tempSize: "100M"
   action: "Delete"
-  pdbTlsCat:
+  dropAction: "INCLUDING"
+pdbTlsCat:
     secret:
       secretName: "db-ca"
       key: "ca.crt"
