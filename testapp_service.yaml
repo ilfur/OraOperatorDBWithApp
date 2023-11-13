@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: cdbtest-app
-  name: cdbtest-deployment
+  name: cdbtest-service
   namespace: oracle-database-operator-system
 spec:
   ports:
