@@ -22,7 +22,7 @@ spec:
   tempSize: "100M"
   action: "Map"
   dropAction: "INCLUDING"
-pdbTlsCat:
+  pdbTlsCat:
     secret:
       secretName: "db-ca"
       key: "ca.crt"
