@@ -20,8 +20,8 @@ spec:
   fileNameConversions: "NONE"
   totalSize: "1G"
   tempSize: "100M"
-  #action: "Create"
-  action: "Delete"
+  action: "Create"
+  #action: "Delete"
   dropAction: "INCLUDING"
   pdbTlsCat:
     secret:
