@@ -1,8 +1,8 @@
 apiVersion: database.oracle.com/v1alpha1
 kind: SingleInstanceDatabase
 metadata:
-  name: chronin-db
-  namespace: chronin-database
+  name: db23c
+  namespace: database23c
 spec:
   adminPassword:
     keepSecret: true
@@ -13,7 +13,7 @@ spec:
   edition: enterprise
   image:
     #pullFrom: container-registry.oracle.com/database/enterprise:latest
-    pullFrom: container-registry.oracle.com/database/enterprise_ru:21.11.0.0
+    pullFrom: container-registry.oracle.com/database/free:latest
     pullSecrets: oracle-container-registry-secret
   loadBalancer: true
   pdbName: chronin
