@@ -17,7 +17,7 @@ spec:
     pullSecrets: oracle-container-registry-secret
     prebuiltDB: true
   loadBalancer: true
-  pdbName: chronin
+  pdbName: FREEPDB1
   persistence:
     accessMode: ReadWriteOnce
     size: 100Gi
