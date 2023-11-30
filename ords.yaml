@@ -1,0 +1,28 @@
+apiVersion: database.oracle.com/v1alpha1
+kind: OracleRestDataService
+metadata:
+  name: chronin-ords
+  namespace: database23c
+spec:
+  adminPassword:
+    keepSecret: true
+    secretKey: oracle_pwd
+    secretName: db-admin-secret
+  apexPassword:
+    keepSecret: true
+    secretKey: oracle_pwd
+    secretName: apex-secret
+  databaseRef: chronin-db
+  image:
+    #pullFrom: container-registry.oracle.com/database/ords:21.4.2-gh
+    pullFrom: container-registry.oracle.com/database/ords:23.3.0
+  loadBalancer: true
+  ordsPassword:
+    keepSecret: true
+    secretKey: oracle_pwd
+    secretName: ords-secret
+  replicas: 1
+  restEnableSchemas:
+  - enable: true
+    schemaName: restme
+    urlMapping: restme
