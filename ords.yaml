@@ -1,7 +1,7 @@
 apiVersion: database.oracle.com/v1alpha1
 kind: OracleRestDataService
 metadata:
-  name: chronin-ords
+  name: 23c-ords
   namespace: database23c
 spec:
   adminPassword:
@@ -12,7 +12,7 @@ spec:
     keepSecret: true
     secretKey: oracle_pwd
     secretName: apex-secret
-  databaseRef: chronin-db
+  databaseRef: db23c
   image:
     #pullFrom: container-registry.oracle.com/database/ords:21.4.2-gh
     pullFrom: container-registry.oracle.com/database/ords:23.3.0
