@@ -14,7 +14,7 @@ spec:
   image:
     #pullFrom: container-registry.oracle.com/database/enterprise:latest
     pullFrom: container-registry.oracle.com/database/free:latest
-    pullSecrets: oracle-container-registry-secret
+    #pullSecrets: oracle-container-registry-secret
     prebuiltDB: true
   loadBalancer: true
   pdbName: FREEPDB1
