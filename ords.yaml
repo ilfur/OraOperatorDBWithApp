@@ -2,7 +2,7 @@ apiVersion: database.oracle.com/v1alpha1
 kind: OracleRestDataService
 metadata:
   name: db23c-ords
-  namespace: database23c
+  namespace: sidb23c
 spec:
   adminPassword:
     keepSecret: true
