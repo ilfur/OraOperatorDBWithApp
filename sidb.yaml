@@ -21,6 +21,7 @@ spec:
   persistence:
     accessMode: ReadWriteOnce
     size: 100Gi
-    storageClass: oci-bv
+    #storageClass: oci-bv
+    storageClass: rook-ceph-block
   replicas: 1
   sid: FREE
