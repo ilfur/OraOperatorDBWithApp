@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ords-sidb23c
+  namespace: sidb23c
+spec:
+  ports:
+  - name: ords
+    port: 8080
+    protocol: TCP
+    targetPort: 8181
+  selector:
+    app.kubernetes.io/instance: ords-sidb23c
+    app.kubernetes.io/name: ords
+  type: ClusterIP
