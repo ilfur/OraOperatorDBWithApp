@@ -14,8 +14,8 @@ spec:
     secretName: apex-secret
   databaseRef: db23c
   image:
-    #pullFrom: container-registry.oracle.com/database/ords:21.4.2-gh
-    pullFrom: container-registry.oracle.com/database/ords:23.2.0
+    pullFrom: container-registry.oracle.com/database/ords:21.4.2-gh
+    #pullFrom: container-registry.oracle.com/database/ords:23.2.0
     #pullFrom: fra.ocir.io/frul1g8cgfam/pub_ords:23.4.0
   loadBalancer: false
   ordsPassword:
