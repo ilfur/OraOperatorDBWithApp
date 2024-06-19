@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ords-sidb23c
+  namespace: sidb23c
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: ords-sidb23c
+      app.kubernetes.io/name: ords
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: ords-sidb23c
+        app.kubernetes.io/name: ords
+    spec:
+      containers:
+      - image: container-registry.oracle.com/database/ords:latest
+        imagePullPolicy: IfNotPresent
+        name: app
+        ports:
+        - containerPort: 8181
+          name: ords
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /opt/oracle/variables
+          name: secretords
+      volumes:
+      - name: secretords
+        secret:
+          defaultMode: 420
+          secretName: ords-secret
