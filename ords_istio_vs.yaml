@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: ords23c-service
+  namespace: sidb23c
+spec:
+  gateways:
+  - istio-system/http-istio-gateway
+  hosts:
+  - 'ords.141.147.33.9.nip.io'
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: ords-sidb23c
+        port:
+          number: 8080
