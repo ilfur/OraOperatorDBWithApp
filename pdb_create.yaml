@@ -17,6 +17,14 @@ spec:
     secret:
       secretName: "testpdb-secret"
       key: "sysadmin_pwd"
+  webServerPwd:
+    secret:
+      key: webserver_pwd
+      secretName: cdb19c-secret
+  webServerUser:
+    secret:
+      key: webserver_user
+      secretName: cdb19c-secret
   fileNameConversions: "NONE"
   totalSize: "1G"
   tempSize: "100M"
