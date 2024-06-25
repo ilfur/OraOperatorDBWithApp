@@ -26,10 +26,10 @@ spec:
   ordsImage: fra.ocir.io/frul1g8cgfam/pub_ordsrestmgmt:23.1
   ordsImagePullPolicy: Always
   ordsPort: 8888
-  ordsPwd:
-    secret:
-      key: ords_pwd
-      secretName: cdb19c-secret
+  #ordsPwd:
+  #  secret:
+  #    key: ords_pwd
+  #    secretName: cdb19c-secret
   replicas: 1
   serviceName: DB19c_fra1gq.publicdevnet.k8snet.oraclevcn.com
   sysAdminPwd:
