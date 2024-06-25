@@ -4,9 +4,10 @@ metadata:
   name: testpdb
   namespace: oracle-database-operator-system
   labels:
-    cdb: DB19C
+    cdb: cdb19c
 spec:
   cdbResName: "cdb19c"
+  cdbNamespace: "oracle-database-operator-system"
   cdbName: "DB19C"
   pdbName: "testpdb"
   adminName:
