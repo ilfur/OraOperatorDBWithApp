@@ -14,4 +14,26 @@ spec:
   selector:
     app: cdbtest-app
   sessionAffinity: None
-  type: LoadBalancer
+  type: ClusterIP
+
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: cdbtest-vservice
+  namespace: oracle-database-operator-system
+spec:
+  gateways:
+  - istio-system/http-istio-gateway
+  hosts:
+  - 'testapp.141.147.33.9.nip.io'
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: cdbtest-service
+        port:
+          number: 8080
+
