@@ -18,21 +18,13 @@ spec:
             - /bin/bash
             - /scripts/prepare.sh
           env:
-            - name: DB_SID
-              valueFrom:
-                secretKeyRef:
-                  key: DB_SID
-                  name: myvarrad-varraddauerzaehlstellen-secret
-            - name: DB_PDB
-              valueFrom:
-                secretKeyRef:
-                  key: DB_PDB
-                  name: myvarrad-varraddauerzaehlstellen-secret
+            - name: DB_SERVICE
+              value: FREE
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   key: DB_PASSWORD
-                  name: myvarrad-varraddauerzaehlstellen-secret
+                  name: 23aidb-secret
           image: 'container-registry.oracle.com/database/free:latest'
           imagePullPolicy: IfNotPresent
           name: dbhelper
