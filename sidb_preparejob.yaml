@@ -18,6 +18,8 @@ spec:
             - /bin/bash
             - /scripts/prepare.sh
           env:
+            - name: DB_HOST
+              value: db23ai.aidemo
             - name: DB_SERVICE
               value: FREE
             - name: DB_PASSWORD
@@ -36,6 +38,8 @@ spec:
             - /bin/bash
             - /scripts/testconn.sh
           env:
+            - name: DB_HOST
+              value: db23ai.aidemo
             - name: DB_SERVICE
               value: FREE
             - name: DB_PASSWORD
