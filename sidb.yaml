@@ -1,0 +1,28 @@
+apiVersion: database.oracle.com/v1alpha1
+kind: SingleInstanceDatabase
+metadata:
+  name: db23c
+  namespace: sidb23c
+spec:
+  adminPassword:
+    keepSecret: true
+    secretKey: oracle_pwd
+    secretName: db-admin-secret
+  archiveLog: true
+  charset: AL32UTF8
+  edition: free
+  image:
+    #pullFrom: container-registry.oracle.com/database/enterprise:latest
+    pullFrom: container-registry.oracle.com/database/free:latest
+    #pullSecrets: oracle-container-registry-secret
+    prebuiltDB: true
+  loadBalancer: true
+  pdbName: FREEPDB1
+  persistence:
+    accessMode: ReadWriteOnce
+    size: 100Gi
+    #storageClass: oci-bv
+    storageClass: rook-ceph-block
+  replicas: 1
+  sid: FREE
+  
