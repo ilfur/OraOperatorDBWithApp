@@ -22,7 +22,7 @@ spec:
       key: tls.key
       secretName: db-tls
   dbPort: 1521
-  dbServer: 23aidb.23aidemo
+  dbServer: db23ai.23aidemo
   ordsImage: fra.ocir.io/frul1g8cgfam/pub_ordsrestmgmt:23.1
   ordsImagePullPolicy: Always
   ordsPort: 8888
