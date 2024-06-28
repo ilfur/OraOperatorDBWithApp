@@ -31,7 +31,7 @@ spec:
       key: ords_pwd
       secretName: 23aicdb-secret
   replicas: 1
-  serviceName: DB19c_fra1gq.publicdevnet.k8snet.oraclevcn.com
+  serviceName: FREE
   sysAdminPwd:
     secret:
       key: sysadmin_pwd
