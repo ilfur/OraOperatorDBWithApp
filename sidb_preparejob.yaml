@@ -13,6 +13,8 @@ spec:
       labels:
         job-name: aidb23c-prepare-job
     spec:
+      restartPolicy: Never
+      #restartPolicy: OnFailure
       containers:
         - command:
             - /bin/bash
