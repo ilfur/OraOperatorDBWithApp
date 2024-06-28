@@ -1,8 +1,8 @@
 apiVersion: database.oracle.com/v1alpha1
 kind: SingleInstanceDatabase
 metadata:
-  name: db23c
-  namespace: sidb23c
+  name: db23ai
+  namespace: 23aidemo
 spec:
   adminPassword:
     keepSecret: true
