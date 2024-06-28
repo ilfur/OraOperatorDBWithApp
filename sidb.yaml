@@ -23,7 +23,7 @@ spec:
     size: 100Gi
     #storageClass: oci-bv
     storageClass: rook-ceph-block
-    scriptsVolumeName: dbscripts
+    #scriptsVolumeName: dbscripts
   replicas: 1
   sid: FREE
   
