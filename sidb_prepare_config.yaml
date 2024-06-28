@@ -3,6 +3,12 @@ data:
   prepare.sh: |-
     #!/bin/bash 
      sqlplus sys/$DB_PASSWORD@$DB_HOST:1521/$DB_SERVICE as sysdba << EOF 
+     ALTER SESSION SET "_oracle_script"=true;
+     DROP USER  C##DBAPI_CDB_ADMIN cascade;
+     CREATE USER C##DBAPI_CDB_ADMIN IDENTIFIED BY <Password> CONTAINER=ALL ACCOUNT UNLOCK;
+     GRANT SYSOPER TO C##DBAPI_CDB_ADMIN CONTAINER = ALL;
+     GRANT SYSDBA TO C##DBAPI_CDB_ADMIN CONTAINER = ALL;
+     GRANT CREATE SESSION TO C##DBAPI_CDB_ADMIN CONTAINER = ALL;
      exit; 
      EOF 
   testconn.sh: |-
