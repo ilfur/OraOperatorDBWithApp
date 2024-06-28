@@ -33,7 +33,7 @@ spec:
                 secretKeyRef:
                   key: DB_PASSWORD
                   name: myvarrad-varraddauerzaehlstellen-secret
-          image: 'fra.ocir.io/frul1g8cgfam/mri_oml4pydbhelper:latest'
+          image: 'container-registry.oracle.com/database/free:latest'
           imagePullPolicy: IfNotPresent
           name: dbhelper
           volumeMounts:
@@ -49,8 +49,8 @@ spec:
                 secretKeyRef:
                   key: DB_PASSWORD
                   name: myvarrad-varraddauerzaehlstellen-secret
-          image: 'fra.ocir.io/frul1g8cgfam/mri_oml4pydbhelper:latest'
-          imagePullPolicy: Always
+          image: 'container-registry.oracle.com/database/free:latest'
+          imagePullPolicy: IfNotPresent
           name: dbcheck
           volumeMounts:
             - mountPath: /scripts
@@ -58,7 +58,7 @@ spec:
       volumes:
         - configMap:
             defaultMode: 420
-            name: myvarrad-varraddauerzaehlstellen-scripts-config
+            name: aidb23cdb-prepare-config
           name: scripts
 
 #ALTER SESSION SET "_oracle_script"=true;
