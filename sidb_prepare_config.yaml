@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: aidb23cdb-prepare-config
-  namespace: aidemo
+  namespace: 23aidemo
 data:
   prepare.sh: |-
     #!/bin/bash 
