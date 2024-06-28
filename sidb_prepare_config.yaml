@@ -2,17 +2,13 @@ apiVersion: v1
 data:
   prepare.sh: |-
     #!/bin/bash 
-     sqlplus / AS SYSDBA << EOF 
-     ALTER USER SYS IDENTIFIED BY "$DB_PASSWORD"; 
-     ALTER USER SYSTEM IDENTIFIED BY "$DB_PASSWORD"; 
-     ALTER SESSION SET CONTAINER=ORCLPDB1; 
-     ALTER USER PDBADMIN IDENTIFIED BY "$DB_PASSWORD"; 
+     sqlplus sys/$DB_PASSWORD@$DB_HOST:1521/$DB_SERVICE as sysdba << EOF 
      exit; 
      EOF 
   testconn.sh: |-
-    /opt/oracle/sqlcl/bin/sql /nolog << EOF 
+    #!/bin/bash 
+     sqlplus sys/$DB_PASSWORD@$DB_HOST:1521/$DB_SERVICE as sysdba << EOF 
      whenever sqlerror exit failure; 
-     connect sys/$DB_PASSWORD@dbai23c.aidemo:1521/$DB_SERVICE as sysdba 
      select * from dual; 
      exit; 
      EOF 
