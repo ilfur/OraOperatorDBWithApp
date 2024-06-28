@@ -23,8 +23,8 @@ spec:
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  key: DB_PASSWORD
-                  name: 23aidb-secret
+                  key: oracle_pwd
+                  name: db-admin-secret
           image: 'container-registry.oracle.com/database/free:latest'
           imagePullPolicy: IfNotPresent
           name: dbhelper
@@ -39,8 +39,8 @@ spec:
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  key: DB_PASSWORD
-                  name: myvarrad-varraddauerzaehlstellen-secret
+                  key: oracle_pwd
+                  name: db-admin-secret
           image: 'container-registry.oracle.com/database/free:latest'
           imagePullPolicy: IfNotPresent
           name: dbcheck
