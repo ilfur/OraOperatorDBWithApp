@@ -19,7 +19,7 @@ spec:
             - /scripts/prepare.sh
           env:
             - name: DB_HOST
-              value: db23ai.aidemo
+              value: db23ai.23aidemo
             - name: DB_SERVICE
               value: FREE
             - name: CDBADMIN_PWD
