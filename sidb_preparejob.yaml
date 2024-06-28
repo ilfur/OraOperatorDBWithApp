@@ -36,6 +36,8 @@ spec:
             - /bin/bash
             - /scripts/testconn.sh
           env:
+            - name: DB_SERVICE
+              value: FREE
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
