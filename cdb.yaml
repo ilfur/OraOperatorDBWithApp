@@ -23,7 +23,7 @@ spec:
       secretName: db-tls
   dbPort: 1521
   dbServer: db23ai.23aidemo
-  ordsImage: fra.ocir.io/frul1g8cgfam/pub_ordsrestmgmt:23.1
+  ordsImage: fra.ocir.io/frul1g8cgfam/pub_ordsrestmgmt:24.2
   ordsImagePullPolicy: Always
   ordsPort: 8888
   ordsPwd:
