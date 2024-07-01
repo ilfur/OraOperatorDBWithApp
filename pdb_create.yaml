@@ -4,9 +4,9 @@ metadata:
   name: aipdb
   namespace: 23aidemo
   labels:
-    cdb: 23aicdb
+    cdb: aicdb
 spec:
-  cdbResName: "23aicdb"
+  cdbResName: "aicdb"
   cdbNamespace: "23aidemo"
   cdbName: "FREE"
   pdbName: "aipdb"
@@ -21,11 +21,11 @@ spec:
   webServerPwd:
     secret:
       key: webserver_pwd
-      secretName: 23aicdb-secret
+      secretName: aicdb-secret
   webServerUser:
     secret:
       key: webserver_user
-      secretName: 23aicdb-secret
+      secretName: aicdb-secret
   fileNameConversions: "NONE"
   totalSize: "1G"
   tempSize: "100M"
