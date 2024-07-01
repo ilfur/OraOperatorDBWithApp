@@ -28,12 +28,12 @@ spec:
               valueFrom:
                 secretKeyRef:
                   key: cdbadmin_pwd
-                  name: 23aicdb-secret            
+                  name: aicdb-secret            
             - name: CDBADMIN_USER
               valueFrom:
                 secretKeyRef:
                   key: cdbadmin_user
-                  name: 23aicdb-secret            
+                  name: aicdb-secret            
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
