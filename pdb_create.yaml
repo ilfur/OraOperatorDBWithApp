@@ -2,12 +2,12 @@ apiVersion: database.oracle.com/v1alpha1
 kind: PDB
 metadata:
   name: aipdb
-  namespace: aidemo
+  namespace: 23aidemo
   labels:
     cdb: 23aicdb
 spec:
   cdbResName: "23aicdb"
-  cdbNamespace: "aidemo"
+  cdbNamespace: "23aidemo"
   cdbName: "FREE"
   pdbName: "aipdb"
   adminName:
