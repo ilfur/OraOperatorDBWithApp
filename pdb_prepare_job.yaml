@@ -23,17 +23,7 @@ spec:
             - name: DB_HOST
               value: db23ai.23aidemo
             - name: DB_SERVICE
-              value: FREE
-            - name: CDBADMIN_PWD
-              valueFrom:
-                secretKeyRef:
-                  key: cdbadmin_pwd
-                  name: aicdb-secret            
-            - name: CDBADMIN_USER
-              valueFrom:
-                secretKeyRef:
-                  key: cdbadmin_user
-                  name: aicdb-secret            
+              value: AIPDB
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -53,7 +43,7 @@ spec:
             - name: DB_HOST
               value: db23ai.23aidemo
             - name: DB_SERVICE
-              value: FREE
+              value: AIPDB
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
