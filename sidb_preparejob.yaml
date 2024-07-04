@@ -39,7 +39,7 @@ spec:
                 secretKeyRef:
                   key: oracle_pwd
                   name: db-admin-secret
-          image: 'container-registry.oracle.com/database/free:latest'
+          image: 'fra.ocir.io/frul1g8cgfam/database/aidemo:23.4'
           imagePullPolicy: IfNotPresent
           name: dbhelper
           volumeMounts:
@@ -59,7 +59,7 @@ spec:
                 secretKeyRef:
                   key: oracle_pwd
                   name: db-admin-secret
-          image: 'container-registry.oracle.com/database/free:latest'
+          image: 'fra.ocir.io/frul1g8cgfam/database/aidemo:23.4'
           imagePullPolicy: IfNotPresent
           name: dbcheck
           volumeMounts:
@@ -71,5 +71,3 @@ spec:
             name: aidb23cdb-prepare-config
           name: scripts
 
-#GRANT SYSDBA TO C##DBAPI_CDB_ADMIN CONTAINER = ALL;
-#GRANT CREATE SESSION TO C##DBAPI_CDB_ADMIN CONTAINER = ALL;
