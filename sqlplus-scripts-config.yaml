@@ -26,4 +26,3 @@ data:
     curl https://raw.githubusercontent.com/ilfur/OraOperatorDBWithApp/sidbpluscdb/dbscripts/01_embedding/show_immobilien.sql -o /projects/01_embed/show_immobilien.sql
     curl https://raw.githubusercontent.com/ilfur/OraOperatorDBWithApp/sidbpluscdb/dbscripts/01_embedding/test_insert.sql -o /projects/01_embed/test_insert.sql
     curl https://raw.githubusercontent.com/ilfur/OraOperatorDBWithApp/sidbpluscdb/dbscripts/01_embedding/test_select.sql.sql -o /projects/01_embed/test_select.sql.sql
-    chmod -R 755 /projects
