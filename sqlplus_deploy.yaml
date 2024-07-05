@@ -39,7 +39,7 @@ spec:
         command:
           - /bin/bash
           - /scripts/getfiles.sh
-        image: 'docker.io/busybox:latest'
+        image: 'alpine:3'
         imagePullPolicy: IfNotPresent
         name: getfiles
         volumeMounts:
