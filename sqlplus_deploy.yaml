@@ -35,15 +35,6 @@ spec:
         - mountPath: /projects
           name: storage
       initContainers:
-      - name: set-perms
-        command: ["chmod","777","/projects"]
-        image: 'alpine:3'
-        imagePullPolicy: IfNotPresent
-        volumeMounts:
-        - mountPath: /scripts
-          name: scripts
-        - mountPath: /projects
-          name: storage
       - name: get-files
         command:
           - /bin/bash
@@ -55,6 +46,8 @@ spec:
           name: scripts
         - mountPath: /projects
           name: storage
+      securityContext:
+        fsGroup: 54322
       volumes:
         - name: storage
           persistentVolumeClaim:
