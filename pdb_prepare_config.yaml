@@ -25,7 +25,8 @@ data:
       dbms_datapump.add_file(
         handle    => l_dp_handle,
         filename  => 'immobilien.dmp',
-        directory => 'VEC_DUMP');
+        directory => 'VEC_DUMP',
+        filetype => DBMS_DATAPUMP.KU$_FILE_TYPE_DUMP_FILE );
 
       -- Specify the log file name and directory object name.
       dbms_datapump.add_file(
