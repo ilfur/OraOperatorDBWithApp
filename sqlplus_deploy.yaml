@@ -45,6 +45,9 @@ spec:
         volumeMounts:
           - mountPath: /scripts
             name: scripts
+        volumeMounts:
+        - mountPath: /projects
+          name: storage
       volumes:
         - name: storage
           persistentVolumeClaim:
