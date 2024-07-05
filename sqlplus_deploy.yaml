@@ -38,8 +38,7 @@ spec:
           name: storage
       initContainers:
         - command:
-            - /bin/bash
-            - /scripts/getfiles.sh
+            - /bin/bash - /scripts/getfiles.sh
         image: 'docker.io/ilfur/sqlcl-liquibase:21.3.0.0.0'
         imagePullPolicy: IfNotPresent
         name: dbcheck
