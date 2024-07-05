@@ -20,12 +20,10 @@ spec:
         app.kubernetes.io/name: sqlcl-liquibase
     spec:
       containers:
-      - env:
+      - name: app
+        env:
         - name: ORAPWD
-          valueFrom:
-            secretKeyRef:
-              key: orapwd
-              name: instantclient-sqlcl-liquibase-secret
+          value: orapwd
         image: docker.io/ilfur/sqlcl-liquibase:21.3.0.0.0
         imagePullPolicy: Always
         name: app
@@ -37,11 +35,13 @@ spec:
         - mountPath: /projects
           name: storage
       initContainers:
-        - command:
-            - /bin/bash - /scripts/getfiles.sh
+      - name: getFiles
+        command:
+          - /bin/bash
+          - /scripts/getfiles.sh
         image: 'docker.io/ilfur/sqlcl-liquibase:21.3.0.0.0'
         imagePullPolicy: IfNotPresent
-        name: dbcheck
+        name: getfiles
         volumeMounts:
           - mountPath: /scripts
             name: scripts
@@ -53,4 +53,3 @@ spec:
           configMap:
             defaultMode: 420
             name: sqlplus-scripts-config
-            
