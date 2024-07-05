@@ -35,7 +35,7 @@ spec:
         - mountPath: /projects
           name: storage
       initContainers:
-      - name: setPerms
+      - name: set-perms
         command: ["chmod","777","/projects"]
         image: 'alpine:3'
         imagePullPolicy: IfNotPresent
@@ -44,7 +44,7 @@ spec:
           name: scripts
         - mountPath: /projects
           name: storage
-      - name: getFiles
+      - name: get-files
         command:
           - /bin/bash
           - /scripts/getfiles.sh
