@@ -1,0 +1,42 @@
+declare
+  jo json_object_t;
+begin
+
+  -- create an OCI credential
+  jo := json_object_t();
+  jo.put('user_ocid','ocid1.user.oc1..aaaaaaaah4kwgzujw4uv7smj3d745qhktqpscalcjoipb5gazjnzqpynpqoq');
+  jo.put('tenancy_ocid','ocid1.tenancy.oc1..aaaaaaaa2sziasuopzutaejrglu6rdjt4wcpil27xqvbzoipr6sdi35ilpuq');
+  jo.put('compartment_ocid','ocid1.compartment.oc1..aaaaaaaa5gkucmcdztfnhj3z7hdpzx2jfmtwxbzfasoz5ylv5eca5n76hmba');
+  jo.put('private_key','MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC01agSsRqHOxcZ
+/nqfy9HwhtJr3HfioUHcfoH2Cnxj+d6/Q5LX4RjmGeg7U6qRgIHXPW49H4clPgVJ
+i8pIyM/oarrVKVVN1i3jo72PZJmQubE7WRjQVEr95SCCUSjm4sHSjUE6fboSpN1g
+dq/DgsBink4uBMRweMW3JB9OOOfV4dNhJbeakQhRErbUIP8WyWMP7XHoPRLfNEBs
+0b6vePjdBgaOWbaeeDB7naQMWlmNxVh5TiSot8n2tdEWW2JH/38T2WK6Hq1V/PAX
+lgZm68DroxbDcdcBkyRAFiHuQXZ36e5KByl/tzaaKzfKPzAzTrUeCpO/k+d500Ot
+MhxkLYAFAgMBAAECggEAKi393qJFvE5JpKwJgTVi+jYQZc1Of2O6v4oYmUG34v/4
+92b1HPqpup5HX3M0AW1Wm9R93q74cHTnedCr9c81Q5KFksvp1FaFbKgYQpamBS5z
+CxNMqOdIeLFVpF/26OfyasC8+r4xxUCETIhSlgltA3PGa5B8G3noMEAyNyYp2WbH
+M93Vi0wDZn4Ij6zPJ3H3lPx6EMOXogS33FAPm+OgT9d7SEBqbg+HgZvhn3OoB6ri
+w0G57rN1tb30gpla4y5rSsXaGnLdy1CYnQ6DxjTI/35mf3Xad6aeA3a7PAQ/xGLF
+grtBwDZ+Vd7KJpt+dr2wHyN9uP7c3EyDB821h0S6vwKBgQDmJ2OEmRy8dPdBARtZ
+0B+slY+GSedp8X01CPWTKtPJ/lK/35EXbOuWSmxcXvhVCcnHQ9dGI6BCJ7LhgBYT
+WNowyOUSDlk4h2KqO5bK7QJsmSuOWoBaKK0v51ZxF97rad7Ujc43hSHjUMXKuhJA
+BqNoUQFM5zU0VyGUsGWRjHsYJwKBgQDJJGfinmvNabgmm8KAje1LSFFtKMtmZmlm
+ZEWKzMc1j5EV3ssfWU6LwQymniFXf7jXO7PkMsIQj0U3K5iKSMLX7FUfQSc+wxdO
+Q4HAWZsaBZepZ0mxvfFff+6lPpeZxeXBw6Up0lHkvkuPa8UOe3XWkCJ1N6H3N4mg
+x+q9We618wKBgQDEvETIcu1qdv1oFp8fndWFfG8sVn43RJNHw3nQLBrQHtLzaxMm
+mBel58ZLC29xmaVe7THWpdt20WKKeifkr94LN58AWT2RIcGITNmwavrYg/IEhH4V
+E5I/UZvFnqcSSvSMcw8kzGvUWRZKHdY93q7OG/hlmXoUXKq65DJeQVxznwKBgHT3
+zc20MJ54bxVMmNQnNKoFuQxQn8/BmGNpxiMMKIBWJ5nfQKHPTmTo85Fk/aCjbnsD
+hf4bIk1881Q87uzjmSL1lR6ixc6yprfle+u+b/q269YgcXOCMH5HqCDCAGj080I1
+orNqUiNCIjCaDDL6yrDmipM9sdtQmaE9AJ3yUWXPAoGBALYCFnpQB2N9aWws5mhv
+333CwAabti7gaAGfAafgsUE2F01kJJkNrcuIbUGezzDoZg7QLJ8Huy8rYt5YSi4I
+F5liwuvn+K4cy0bIl7pti51pmaqxlJF+SHLgGbwpYpmhFr7NUWp3cZEHpH5RayHB
+6Ycbh5h7X1dlKZ9MwurXq1HV');
+  jo.put('fingerprint','18:96:16:1c:a0:1b:a9:86:46:f0:69:fb:3a:d0:79:44');
+  dbms_output.put_line(jo.to_string);
+  dbms_vector_chain.create_credential(
+    credential_name   => 'OCI_CRED',
+    params            => json(jo.to_string));
+end;
+/
