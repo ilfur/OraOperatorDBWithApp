@@ -6,11 +6,12 @@ metadata:
 data:
   prepare.sh: |-
     #!/bin/bash 
-     curl https://raw.githubusercontent.com/ilfur/OraOperatorDBWithApp/sidbpluscdb/dbscripts/01_embedding/01_create_user_vector.sql -o /opt/vecdump/01_create_user_vector.sql
-     sqlplus sys/$DB_PASSWORD@$DB_HOST:1521/$DB_SERVICE as sysdba << EOF 
-     @01_create_user_vector.sql
-     exit; 
-     EOF 
+    curl https://raw.githubusercontent.com/ilfur/OraOperatorDBWithApp/sidbpluscdb/dbscripts/01_embedding/01_create_user_vector.sql -o /opt/vecdump/01_create_user_vector.sql
+    cd /opt/vecdump
+    sqlplus sys/$DB_PASSWORD@$DB_HOST:1521/$DB_SERVICE as sysdba << EOF 
+    @01_create_user_vector.sql
+    exit; 
+    EOF 
   testconn.sh: |-
     #!/bin/bash 
      sqlplus sys/$DB_PASSWORD@$DB_HOST:1521/$DB_SERVICE as sysdba << EOF 
