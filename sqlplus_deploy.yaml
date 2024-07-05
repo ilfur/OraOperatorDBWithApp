@@ -1,0 +1,42 @@
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    labels:
+      app.kubernetes.io/instance: instantclient
+      app.kubernetes.io/name: sqlcl-liquibase
+    name: instantclient-sqlcl-liquibase
+    namespace: 23aidemo
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app.kubernetes.io/instance: instantclient
+        app.kubernetes.io/name: sqlcl-liquibase
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app.kubernetes.io/instance: instantclient
+          app.kubernetes.io/name: sqlcl-liquibase
+      spec:
+        containers:
+        - env:
+          - name: ORAPWD
+            valueFrom:
+              secretKeyRef:
+                key: orapwd
+                name: instantclient-sqlcl-liquibase-secret
+          image: docker.io/ilfur/sqlcl-liquibase:21.3.0.0.0
+          imagePullPolicy: Always
+          name: app
+          ports:
+          - containerPort: 8080
+            name: console
+            protocol: TCP
+          volumeMounts:
+          - mountPath: /projects
+            name: storage
+        volumes:
+        - name: storage
+          persistentVolumeClaim:
+            claimName: sqlcl-pvc
