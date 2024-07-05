@@ -53,3 +53,15 @@ spec:
           configMap:
             defaultMode: 420
             name: sqlplus-scripts-config
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sqlcl-pvc
+  namespace: 23aidemo
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
