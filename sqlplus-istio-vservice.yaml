@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  annotations:
+  name: sqlcl-service
+  namespace: 23aidemo
+spec:
+  gateways:
+  - istio-system/http-istio-gateway
+  hosts:
+  - sqlcl.141.147.33.9.nip.io
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: instantclient-sqlcl-liquibase
+        port:
+          number: 8080
