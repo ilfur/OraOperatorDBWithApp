@@ -4,7 +4,7 @@ metadata:
   name: sqlplus-scripts-config
   namespace: 23aidemo
 data:
-  prepare.sh: |-
+  getfiles.sh: |-
     #!/bin/bash 
     mkdir /projects/01_embed
     mkdir /projects/02_rag
