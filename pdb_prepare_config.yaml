@@ -13,12 +13,12 @@ data:
     declare
       l_dp_handle       number;
     begin
-      -- Open a schema import job.
+      -- Open a schema import job
       l_dp_handle := dbms_datapump.open(
         operation   => 'IMPORT',
         job_mode    => 'TABLE',
         remote_link => NULL,
-        job_name    => 'VECDUMP_IMMOBILIEN_IMPORT',
+        job_name    => 'IMMOBILIEN_IMPORT',
         version     => 'LATEST');
 
       -- Specify the dump file name and directory object name.
