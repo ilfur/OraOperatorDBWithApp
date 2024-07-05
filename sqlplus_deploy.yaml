@@ -3,21 +3,21 @@ kind: Deployment
 metadata:
   labels:
     app.kubernetes.io/instance: instantclient
-    app.kubernetes.io/name: sqlcl-liquibase
-  name: instantclient-sqlcl-liquibase
+    app.kubernetes.io/name: instantclient-sqlplus
+  name: instantclient-sqlplus
   namespace: 23aidemo
 spec:
   replicas: 1
   selector:
     matchLabels:
       app.kubernetes.io/instance: instantclient
-      app.kubernetes.io/name: sqlcl-liquibase
+      app.kubernetes.io/name: instantclient-sqlplus
   template:
     metadata:
       creationTimestamp: null
       labels:
         app.kubernetes.io/instance: instantclient
-        app.kubernetes.io/name: sqlcl-liquibase
+        app.kubernetes.io/name: instantclient-sqlplus
     spec:
       containers:
       - name: app
