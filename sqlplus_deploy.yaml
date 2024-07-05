@@ -40,10 +40,18 @@
           - command:
               - /bin/bash
               - /scripts/getfiles.sh
-            image: 'fra.ocir.io/frul1g8cgfam/database/aidemo:23.4'
-            imagePullPolicy: IfNotPresent
-            name: dbcheck
+          image: 'fra.ocir.io/frul1g8cgfam/database/aidemo:23.4'
+          imagePullPolicy: IfNotPresent
+          name: dbcheck
+          volumeMounts:
+            - mountPath: /scripts
+              name: scripts
         volumes:
         - name: storage
           persistentVolumeClaim:
             claimName: sqlcl-pvc
+        - name: scripts
+          configMap:
+            defaultMode: 420
+            name: sqlplus-scripts-config
+            
