@@ -35,13 +35,21 @@ spec:
         - mountPath: /projects
           name: storage
       initContainers:
+      - name: setPerms
+        command: ['chmod','-R','777','/projects']
+        image: 'alpine:3'
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - mountPath: /scripts
+          name: scripts
+        - mountPath: /projects
+          name: storage
       - name: getFiles
         command:
           - /bin/bash
           - /scripts/getfiles.sh
-        image: 'alpine:3'
+        image: 'docker.io/ilfur/sqlcl-liquibase:21.3.0.0.0'
         imagePullPolicy: IfNotPresent
-        name: getfiles
         volumeMounts:
         - mountPath: /scripts
           name: scripts
