@@ -6,9 +6,9 @@ metadata:
 data:
   getfiles.sh: |-
     #!/bin/bash 
-    mkdir /projects/01_embed
-    mkdir /projects/02_rag
-    mkdir /projects/03_apex
+    #mkdir /projects/01_embed
+    #mkdir /projects/02_rag
+    #mkdir /projects/03_apex
     #curl https://raw.githubusercontent.com/ilfur/OraOperatorDBWithApp/sidbpluscdb/dbscripts/01_embedding/01_create_user_vector.sql -o /projects/01_embed/01_create_user_vector.sql
     #curl https://raw.githubusercontent.com/ilfur/OraOperatorDBWithApp/sidbpluscdb/dbscripts/01_embedding/02_load_model_MiniLM.sql -o /projects/01_embed/02_load_model_MiniLM-L6-v2.sql
     #curl https://raw.githubusercontent.com/ilfur/OraOperatorDBWithApp/sidbpluscdb/dbscripts/01_embedding/02_load_model_distil_v2.sql -o /projects/01_embed/02_load_model_distil_v2.sql
