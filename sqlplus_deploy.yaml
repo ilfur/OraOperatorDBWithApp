@@ -39,7 +39,7 @@ spec:
         command:
           - /bin/bash
           - /scripts/getfiles.sh
-        image: 'docker.io/ilfur/sqlcl-liquibase:21.3.0.0.0'
+        image: 'docker.io/busybox:latest'
         imagePullPolicy: IfNotPresent
         name: getfiles
         volumeMounts:
