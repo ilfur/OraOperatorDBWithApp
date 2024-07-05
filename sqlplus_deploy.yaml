@@ -43,9 +43,8 @@ spec:
         imagePullPolicy: IfNotPresent
         name: getfiles
         volumeMounts:
-          - mountPath: /scripts
-            name: scripts
-        volumeMounts:
+        - mountPath: /scripts
+          name: scripts
         - mountPath: /projects
           name: storage
       volumes:
