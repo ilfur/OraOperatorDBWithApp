@@ -1,12 +1,12 @@
 apiVersion: database.oracle.com/v1alpha1
 kind: PDB
 metadata:
-  name: 23ai-remote-pdb
+  name: ai23-remote-pdb
   namespace: 23aidemo
   labels:
-    cdb: 23ai-remote-cdb
+    cdb: ai23-remote-cdb
 spec:
-  cdbResName: "23ai-remote-cdb"
+  cdbResName: "ai23-remote-cdb"
   cdbNamespace: "23aidemo"
   cdbName: "DB23ai"
   pdbName: "remoteaipdb"
