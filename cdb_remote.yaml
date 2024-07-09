@@ -1,7 +1,7 @@
 apiVersion: database.oracle.com/v1alpha1
 kind: CDB
 metadata:
-  name: 23ai-cloud-cdb
+  name: ai23-cloud-cdb
   namespace: 23aidemo
 spec:
   cdbAdminPwd:
@@ -12,7 +12,7 @@ spec:
     secret:
       key: cdbadmin_user
       secretName: aicdb-secret
-  cdbName: DB19c
+  cdbName: DB23ai
   cdbTlsCrt:
     secret:
       key: tls.crt
