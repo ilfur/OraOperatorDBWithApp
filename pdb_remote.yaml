@@ -1,0 +1,46 @@
+apiVersion: database.oracle.com/v1alpha1
+kind: PDB
+metadata:
+  name: 23ai-remote-pdb
+  namespace: 23aidemo
+  labels:
+    cdb: 23ai-remote-cdb
+spec:
+  cdbResName: "23ai-remote-cdb"
+  cdbNamespace: "23aidemo"
+  cdbName: "DB23ai"
+  pdbName: "remoteaipdb"
+  adminName:
+    secret:
+      secretName: "aipdb-secret"
+      key: "sysadmin_user"
+  adminPwd:
+    secret:
+      secretName: "aipdb-secret"
+      key: "sysadmin_pwd"
+  webServerPwd:
+    secret:
+      key: webserver_pwd
+      secretName: aicdb-secret
+  webServerUser:
+    secret:
+      key: webserver_user
+      secretName: aicdb-secret
+  fileNameConversions: "('/opt/oracle/oradata/FREE/pdbseed/','/opt/oracle/oradata/FREE/aipdb/')"
+  totalSize: "1G"
+  tempSize: "100M"
+  action: "Create"
+  #action: "Delete"
+  #dropAction: "INCLUDING"
+  pdbTlsCat:
+    secret:
+      secretName: "db-ca"
+      key: "ca.crt"
+  pdbTlsCrt:
+    secret:
+      secretName: "db-tls"
+      key: "tls.crt"
+  pdbTlsKey:
+    secret:
+      secretName: "db-tls"
+      key: "tls.key"
