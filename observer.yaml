@@ -6,7 +6,7 @@ metadata:
 spec:
   database:
     dbUser:
-      key: "sysdba_user"
+      key: "oracle_user"
       secret: db-admin-secret
 
     dbPassword:
