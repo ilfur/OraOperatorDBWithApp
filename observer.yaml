@@ -6,11 +6,11 @@ metadata:
 spec:
   database:
     dbUser:
-      key: "username"
+      key: "oracle_user"
       secret: db-secret
 
     dbPassword:
-      key: "password"
+      key: "oracle_pwd"
       secret: db-secret
 
     dbConnectionString:
