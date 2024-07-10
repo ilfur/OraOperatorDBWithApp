@@ -7,15 +7,15 @@ spec:
   database:
     dbUser:
       key: "oracle_user"
-      secret: db-secret
+      secret: db-admin-secret
 
     dbPassword:
       key: "oracle_pwd"
-      secret: db-secret
+      secret: db-admin-secret
 
     dbConnectionString:
       key: "connection"
-      secret: db-secret
+      secret: db-admin-secret
 
 
   exporter:
