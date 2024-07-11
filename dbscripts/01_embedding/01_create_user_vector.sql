@@ -1,6 +1,7 @@
 -- Create Tablespace
 CREATE TABLESPACE tbsvec
-DATAFILE '/opt/oracle/oradata/FREE/aipdb/tbsvec.dbf' SIZE 5G AUTOEXTEND ON
+-- DATAFILE '/opt/oracle/oradata/FREE/aipdb/tbsvec.dbf' SIZE 5G AUTOEXTEND ON
+DATAFILE SIZE 5G AUTOEXTEND ON
 EXTENT MANAGEMENT LOCAL
 SEGMENT SPACE MANAGEMENT AUTO;
 -- Create User "vector"
