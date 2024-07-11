@@ -12,12 +12,12 @@ data:
     ADMINISTER KEY MANAGEMENT SET KEY USING TAG 'rotate_key' FORCE KEYSTORE IDENTIFIED BY $DB_PASSWORD WITH BACKUP USING 'backup_key';
     @01_create_user_vector.sql
     exit; 
-    EOF 
+    EOF
   testconn.sh: |-
     #!/bin/bash 
      sqlplus sys/$DB_PASSWORD@$DB_HOST:1521/$DB_SERVICE as sysdba << EOF 
      whenever sqlerror exit failure; 
      select * from dual; 
      exit; 
-     EOF 
+     EOF
      if [ $? -eq 0 ] ; then echo "connect successful" ; else echo "DB connect failed, waiting 3 min and exiting..." ; sleep 180 ; exit 5 ; fi 
