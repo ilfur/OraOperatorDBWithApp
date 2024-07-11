@@ -22,8 +22,10 @@ spec:
       containers:
       - name: app
         env:
+        - name: HOST_NAME
+          value: db23ai.privatek8snet.k8snet.oraclevcn.com
         - name: PDB_NAME
-          value: aipdb
+          value: remoteaipdb
         image: fra.ocir.io/frul1g8cgfam/pub_instantclient_sqlplus:23.4.0_novnc
         imagePullPolicy: Always
         name: app
