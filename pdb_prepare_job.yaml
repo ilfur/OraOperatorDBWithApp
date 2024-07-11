@@ -43,9 +43,11 @@ spec:
             - /scripts/testconn.sh
           env:
             - name: DB_HOST
-              value: db23ai.23aidemo
+#              value: db23ai.23aidemo
+              value: db23ai.privatek8snet.k8snet.oraclevcn.com
             - name: DB_SERVICE
-              value: AIPDB
+#              value: AIPDB
+              value: remoteaipdb
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
