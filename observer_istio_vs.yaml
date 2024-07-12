@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: observer-vservice
+  namespace: sidb23c
+spec:
+  gateways:
+    - istio-system/http-istio-gateway
+  hosts:
+    - observer.141.147.33.9.nip.io
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: obs-svc-sidb23ai-observer
+            port:
+              number: 8080
