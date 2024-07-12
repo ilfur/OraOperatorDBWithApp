@@ -1,4 +1,5 @@
 -- Setup Network ACL 
+-- must be run as SYSDBA user, so this has already been done for You !
 
 BEGIN
   DBMS_NETWORK_ACL_ADMIN.APPEND_HOST_ACE(
