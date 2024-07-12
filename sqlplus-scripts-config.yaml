@@ -6,10 +6,8 @@ metadata:
 data:
   getfiles.sh: |-
     #!/bin/bash 
-    mkdir /projects/01_embedding
-    mkdir /projects/02_rag
-    mkdir /projects/03_apex
     cd /tmp
     git clone -b sidbpluscdb --single-branch https://github.com/ilfur/OraOperatorDBWithApp
     cp -R OraOperatorDBWithApp/dbscripts/* /projects
+    rm -rf OraOperatorDBWithApp
 
