@@ -36,6 +36,8 @@ spec:
         volumeMounts:
         - mountPath: /projects
           name: storage
+        - mountPath: /scripts
+          name: scripts
       initContainers:
       - name: get-files
         command:
