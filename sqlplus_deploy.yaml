@@ -28,7 +28,7 @@ spec:
           value: remoteaipdb.privatek8snet.k8snet.oraclevcn.com
         - name: USER
           value: vector
-        - name: PWD
+        - name: PASSWD
           value: vector
         image: fra.ocir.io/frul1g8cgfam/pub_instantclient_sqlplus:23.4.0_novnc
         imagePullPolicy: Always
