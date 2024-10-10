@@ -5,10 +5,10 @@ metadata:
   namespace: sidb23c
 spec:
   ports:
-  - name: ords
+  - name: https-ords
     port: 8080
     protocol: TCP
-    targetPort: 8181
+    targetPort: 8080
   selector:
     app.kubernetes.io/instance: ords-sidb23c
     app.kubernetes.io/name: ords
