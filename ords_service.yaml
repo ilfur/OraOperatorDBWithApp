@@ -5,7 +5,7 @@ metadata:
   namespace: sidb23c
 spec:
   ports:
-  - name: https-ords
+  - name: http-ords
     port: 8080
     protocol: TCP
     targetPort: 8080
