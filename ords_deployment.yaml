@@ -20,8 +20,8 @@ spec:
         imagePullPolicy: Always
         name: app
         ports:
-        - containerPort: 8080
-          name: http-ords
+        - containerPort: 8181
+          name: https-ords
           protocol: TCP
         volumeMounts:
         - mountPath: /opt/oracle/variables
