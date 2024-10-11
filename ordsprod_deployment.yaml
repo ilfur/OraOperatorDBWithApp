@@ -51,7 +51,7 @@ spec:
         command:
           - /bin/bash
           - /scripts/ords_setup.sh
-        image: fra.ocir.io/frul1g8cgfam/pub_ords:24.3.0-graal
+        image: container-registry.oracle.com/database/ords:latest
         imagePullPolicy: IfNotPresent
         volumeMounts:
         - mountPath: /scripts
@@ -59,7 +59,7 @@ spec:
         - mountPath: /etc/ords/config
           name: config
       containers:
-      - image: fra.ocir.io/frul1g8cgfam/pub_ords:24.3.0-graal
+      - image: container-registry.oracle.com/database/ords:latest
         imagePullPolicy: IfNotPresent
         name: app
         ports:
