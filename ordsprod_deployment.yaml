@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ords-nondev-sidb23c
+  namespace: sidb23c
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: ords-nondev-sidb23c
+      app.kubernetes.io/name: ords-nondev
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: ords-nondev-sidb23c
+        app.kubernetes.io/name: ords-nondev
+    spec:
+      initContainers:
+      - name: set-config
+        command:
+          - /bin/bash
+          - /scripts/ords_setup.sh
+        image: fra.ocir.io/frul1g8cgfam/pub_ords:24.3.0-graal
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - mountPath: /scripts
+          name: scripts
+      containers:
+      - image: fra.ocir.io/frul1g8cgfam/pub_ords:24.3.0-graal
+        imagePullPolicy: Always
+        name: app
+        ports:
+        - containerPort: 8181
+          name: http-ords
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /opt/oracle/variables
+          name: secretords
+      volumes:
+      - name: secretords
+        secret:
+          defaultMode: 420
+          secretName: ords-secret
+      - name: scripts
+        configMap:
+          defaultMode: 420
+          name: ords-init-config
