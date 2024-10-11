@@ -75,5 +75,5 @@ spec:
           defaultMode: 420
           name: ords-init-config
       - name: config
-          emptyDir: {}
+        emptyDir: {}
 
