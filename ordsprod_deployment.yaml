@@ -17,6 +17,37 @@ spec:
     spec:
       initContainers:
       - name: set-config
+        env:
+        - name: ADMIN_USER
+          valueFrom:
+             secretKeyRef:
+                key: admin_user
+                name: ords-secret
+        - name: ADMIN_PWD
+          valueFrom:
+             secretKeyRef:
+                key: admin_pwd
+                name: ords-secret
+        - name: PROXY_PWD
+          valueFrom:
+             secretKeyRef:
+                key: proxy_pwd
+                name: ords-secret
+        - name: DB_HOST
+          valueFrom:
+             secretKeyRef:
+                key: db_host
+                name: ords-secret
+        - name: DB_PORT
+          valueFrom:
+             secretKeyRef:
+                key: db_port
+                name: ords-secret
+        - name: DB_SERVICENAME
+          valueFrom:
+             secretKeyRef:
+                key: db_servicename
+                name: ords-secret
         command:
           - /bin/bash
           - /scripts/ords_setup.sh
@@ -36,15 +67,9 @@ spec:
           name: http-ords
           protocol: TCP
         volumeMounts:
-        - mountPath: /opt/oracle/variables
-          name: secretords
         - mountPath: /etc/ords/config
           name: config
       volumes:
-      - name: secretords
-        secret:
-          defaultMode: 420
-          secretName: ords-secret
       - name: scripts
         configMap:
           defaultMode: 420
