@@ -25,9 +25,11 @@ spec:
         volumeMounts:
         - mountPath: /scripts
           name: scripts
+        - mountPath: /etc/ords/config
+          name: config
       containers:
       - image: fra.ocir.io/frul1g8cgfam/pub_ords:24.3.0-graal
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         name: app
         ports:
         - containerPort: 8181
@@ -36,6 +38,8 @@ spec:
         volumeMounts:
         - mountPath: /opt/oracle/variables
           name: secretords
+        - mountPath: /etc/ords/config
+          name: config
       volumes:
       - name: secretords
         secret:
@@ -45,3 +49,6 @@ spec:
         configMap:
           defaultMode: 420
           name: ords-init-config
+      - name: config
+          emptyDir: {}
+
