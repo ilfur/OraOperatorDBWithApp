@@ -4,7 +4,7 @@ metadata:
   name: ords-init-config
   namespace: sidb23c
 data:
-  ordssetup.sh: |-
+  ords_setup.sh: |-
     #!/bin/bash
     ords install --admin-user $ADMIN_USER --proxy-user --db-hostname $DB_HOST --db-port $DB_PORT --db-servicename $DB_SERVICENAME --feature-sdw true --password-stdin <<EOF
     $ADMIN_PWD
