@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ords-init-config
+  namespace: 23aicdb
+data:
+  ords-install.sh: |-
+    #!/bin/bash
+    cat /secret/password.txt | ords install --admin-user $ADMIN_USER --proxy-user --db-hostname $DB_HOST --db-port $DB_PORT --db-servicename $DB_SERVICENAME --feature-sdw true --password-stdin
+    
